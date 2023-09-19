@@ -1,3 +1,4 @@
 [submodule "webapps-common"]
 	path = org.knime.js.pagebuilder/webapps-common
-	url = ../webapps-common
+	url = https://github.com/johnleemx/webapps-common.git
+	branch = master
