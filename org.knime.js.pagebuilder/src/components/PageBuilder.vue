@@ -4,11 +4,13 @@ import * as interactivityStoreConfig from '~/store/interactivity';
 import * as alertStoreConfig from '~/store/alert';
 import Page from '~/src/components/layout/Page';
 import AlertGlobal from '~/src/components/layout/AlertGlobal';
+import MenuBar from '~/src/components/layout/MenuBar';
 
 export default {
     components: {
         Page,
-        AlertGlobal
+        AlertGlobal,
+        MenuBar
     },
     initStore(store) { // this method is to be called by the embedding app, cf. README
         store.registerModule('pagebuilder', pagebuilderStoreConfig);
@@ -28,5 +30,6 @@ export default {
   <div>
     <Page v-if="hasPage" />
     <AlertGlobal />
+    <MenuBar />
   </div>
 </template>

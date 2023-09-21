@@ -31,13 +31,15 @@ window.knimeLoader = (function () {
             throw new Error(scriptErrorMsg);
         }
         if (knimeLoaderCount === 0) {
-            var view = window[namespace];
-            if (!view) {
-                var referenceErrorMsg = 'No view found under namespace ' + namespace;
-                postResponse(referenceErrorMsg);
-                throw new ReferenceError(referenceErrorMsg);
-            }
-            postResponse();
+            setTimeout(function () {
+                var view = window[namespace];
+                if (!view) {
+                    var referenceErrorMsg = 'No view found under namespace ' + namespace;
+                    postResponse(referenceErrorMsg);
+                    throw new ReferenceError(referenceErrorMsg);
+                }
+                postResponse();
+            }, 100);
         }
     };
 

@@ -614,7 +614,7 @@ div.frame-container {
   transition: min-height 0.4s ease-in 0.1s;
 
   &.single-view {
-    height: calc(100vh - 10px);
+    height: calc(100vh - 60px);
   }
 
   &.with-alert {

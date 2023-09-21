@@ -8,7 +8,9 @@
     "build_credits": "npm run opensourcecredits && vue-cli-service build --target lib --formats umd-min --name knime-pagebuilder-credits src/components/PageBuilderCredits.vue",
     "build_lib": "vue-cli-service build --no-clean --target lib --formats umd-min src/components/PageBuilder.vue",
     "build_wrapper": "cross-env NODE_ENV=production vue-cli-service build --no-clean --inline-vue src/main.js",
+    "build_wrapper_dev": "cross-env NODE_ENV=development vue-cli-service build --no-clean --inline-vue src/main.js",
     "build": "npm run build_credits && npm run build_lib && npm run build_wrapper",
+    "build-dev": "npm run build_credits && npm run build_lib --mode development && npm run build_wrapper_dev",
     "build_lib_dev": "npm run build_lib -- --watch",
     "dev-inte": "concurrently -n server,app -c yellow,blue \"http-server -c-1 --cors -p 4000 dist/ http-server\" \"npm run build_credits && npm run build_lib -- --watch\"",
     "inspect": "vue-cli-service inspect",
@@ -18,7 +20,8 @@
     "test:unit": "vue-cli-service test:unit",
     "coverage": "vue-cli-service test:unit --coverage",
     "sendcoverage": "cross-var sonar-scanner -Dsonar.login=\"$SONAR_LOGIN\" -Dsonar.password=\"$SONAR_PASSWORD\"",
-    "opensourcecredits": "npm run --prefix webapps-common/ opensourcecredits"
+    "opensourcecredits": "npm run --prefix webapps-common/ opensourcecredits",
+    "prepare": "cd webapps-common && npm install"
   },
   "license": "UNLICENSED",
   "author": "KNIME AG, Zurich, Switzerland",
